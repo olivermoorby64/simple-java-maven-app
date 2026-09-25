@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven-3.9.16'
+    }
+    
     stages {
         stage('Environment') {
             steps {
@@ -13,6 +17,7 @@ pipeline {
 
                     echo "===== MAVEN ====="
                     mvn --version || true
+                    which mvn
 
                     echo "===== PATH ====="
                     echo "$PATH"
