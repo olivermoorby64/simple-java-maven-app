@@ -4,9 +4,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    sudo apt update
-                    sh sudo apt install maven
-                    sh mvn -B -DskipTests clean package
+                    apt update
+                    apt install maven
+                    mvn -B -DskipTests clean package
                 '''
             }
         }
